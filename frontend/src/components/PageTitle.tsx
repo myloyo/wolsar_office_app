@@ -1,0 +1,32 @@
+import type { ReactNode } from "react";
+
+export function PageTitle({
+  eyebrow,
+  title,
+  description,
+  action,
+}: {
+  eyebrow: string;
+  title: string;
+  description?: string;
+  action?: ReactNode;
+}) {
+  return (
+    <div className="page-title">
+      <div>
+        <div className="eyebrow">{eyebrow}</div>
+        <h1>{title}</h1>
+        {description && <p>{description}</p>}
+      </div>
+      {action}
+    </div>
+  );
+}
+export function PrototypeNote() {
+  return (
+    <div className="prototype-note">
+      Макет раздела · изменения здесь действуют до перезагрузки страницы.
+      Серверное сохранение ещё не подключено.
+    </div>
+  );
+}
